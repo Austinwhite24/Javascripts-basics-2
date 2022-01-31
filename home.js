@@ -62,23 +62,33 @@ const deliveryAreaZipCodes = [85205, 85204, 85203, 85213, 85206]
 
 // }
 
-function canWeDeliver(zipCode) {
-    if (zipCode === 85205) {
-      return "You're in our delivery zone!"
-    } else if (zipCode === 85204) {
-      return "You're in our delivery zone!"
-    } else if (zipCode === 85203) {
-      return "You're in our delivery zone!"
-    } else if (zipCode === 85203) {
-      return "You're in our delivery zone!"
-    } else if (zipCode === 85206) {
+const canWeDeliver = zipCode =>{
+    if(deliveryAreaZipCodes.includes(zipcode)){
         return "You're in our delivery zone!"
     } else {
-        return "Sorry, we can't deliver to that address"
+        return `Sorry, we can't deliver to that address`
     }
-  }
+}
+
+
+
+// function canWeDeliver(zipCode) {
+//     if (zipCode === 85205) {
+//       return "You're in our delivery zone!"
+//     } else if (zipCode === 85204) {
+//       return "You're in our delivery zone!"
+//     } else if (zipCode === 85203) {
+//       return "You're in our delivery zone!"
+//     } else if (zipCode === 85203) {
+//       return "You're in our delivery zone!"
+//     } else if (zipCode === 85206) {
+//         return "You're in our delivery zone!"
+//     } else {
+//         return "Sorry, we can't deliver to that address"
+//     }
+//   }
   
-  let zipCodeFinder = canWeDeliver(85207)
+  //let zipCodeFinder = canWeDeliver(85207)
 
 
 //let num = canWeDeliver(85205)
@@ -105,6 +115,18 @@ function canWeDeliver(zipCode) {
 //     for (let i = 0; i < 5; i++)
 // }
 
+const canWeDeliverTwo = zipCode => {
+    let message = `Sorry, we can't deliver to that address`
+    deliveryAreaZipCodes.forEach(zip =>{
+        if (zipCode === zip){
+            message = "You're in our delivery zone!"
+        }
+    })
+    return message
+}
+
+
+console.log(canWeDeliverTwo(85205))
 //////////////////PROBLEM 3////////////////////
 /* 
     Below is an array of objects that have some
@@ -141,9 +163,11 @@ const deals = [
 //CODE HERE
 //let newtitle1 = 
 
-deals.title = "10 percent off"
-let deals1 = '15% Off!',
+// deals.title = "10 percent off"
+// let deals1 = '15% Off!',
 
+deals[0].title = deals[0].title.replace('15', '10')
+//console.log(deals)
 //deals["title"] = "10 percent off"
 
 //console.log(deals)
@@ -165,3 +189,6 @@ let deals1 = '15% Off!',
 */
 
 //CODE HERE
+
+deals[1].desc = deals[1].desc.replace("March", "April").trim()
+console.log(deals);

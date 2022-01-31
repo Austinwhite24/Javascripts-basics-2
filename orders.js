@@ -30,21 +30,22 @@
 */
 
 //CODE HERE
-let status = 'queued'
+//let status = 'queued'
 
 class Ticket {
     constructor(items, orderTime, customerId){
         this.items = items
         this.orderTime = orderTime
         this.customerId = customerId
+        this.status = 'queued'
     }
-    updateStatus (newstatus){
-        this.items + newstatus
-        console.log(`'The order for customer', ${customerId} 'is now' ${status} `)
+    updateStatus (newStatus){
+        this.status = newStatus
+        console.log(`The order for customer ${this.customerId} is now ${this.status} `)
     }
 }
 
-console.log(Ticket)
+//console.log(Ticket)
 
 /*
     Create a new instance of your class.
@@ -68,9 +69,11 @@ console.log(pizza1)
 */
 
 //CODE HERE
-updateStatus = (newStatus)
-updateStatus(cooking) 
-    this.item = cooking
+// updateStatus = (newStatus)
+// updateStatus(cooking) 
+//     this.item = cooking
  
 
-console.log(Ticket)
+// console.log(Ticket)
+
+pizza1.updateStatus('cooking')
